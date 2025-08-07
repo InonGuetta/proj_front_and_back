@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    
+    <main>
+        <nav>
+            <a href="./index.html">ראשי</a>
+        </nav>
+
+        <section>
+
+            <form action="/submit-complaint" method="POST">
+                <label for="">בחר סוג תלונה</label>
+                <select class="design_select" name="complaint" id="complaint">
+                    <option class="design_option" value="food">אוכל</option>
+                    <option class="design_option" value="clean">ניקיון </option>
+                    <option class="design_option" value="relationship_between_soldiers">יחס בין החיילים</option>
+                    <option class="design_option" value="problematic_power_relationships">יחסי מרות בעייתים</option>
+                    <option class="design_option" value="other">אחר</option>
+                </select>
+                <label for="complaint-content">תוכן התלונה</label>
+                <textarea id="complaint-content" name="complaint-content" rows="5" cols="40" placeholder="כתוב כאן את תוכן התלונה"></textarea>
+            </form>
+
+        </section>
+    </main>
+
+
 </body>
+
 </html>
