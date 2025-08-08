@@ -1,5 +1,6 @@
 html {
     background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav {
@@ -8,6 +9,20 @@ nav {
 
 nav a {
     text-decoration: none;
+}
+
+section.goal {
+    width: 60%;
+    margin-left: 20%;
+}
+
+section.goal h1 {
+    font-size: xx-large;
+}
+
+section.goal p {
+    font-size: larger;
+    direction: rtl;
 }
 
 section.design_hover {
@@ -41,7 +56,6 @@ main section.soldier {
 
 h1 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: large;
 }
 
@@ -53,12 +67,13 @@ main section.commander {
     margin-top: 2.5rem;
     text-align: center;
     width: 45%;
-    margin-left: 27.5%;    
+    margin-left: 27.5%;
 }
 
-main section label{
+main section label {
     font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 main section form#admin-login-form {
