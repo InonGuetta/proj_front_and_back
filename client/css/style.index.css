@@ -39,14 +39,58 @@ main section.soldier {
 
 }
 
-main section.soldier a {
-    text-decoration: none;
-}
-
 h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
+}
+
+main section.soldier a {
+    text-decoration: none;
+}
+
+main section.commander {
+    margin-top: 2.5rem;
+    text-align: center;
+    width: 45%;
+    margin-left: 27.5%;    
+}
+
+main section label{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main section form#admin-login-form {
+    background: beige;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    border: 2px solid black;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+section form input#admin-password {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    font-size: large;
+    width: 80%;
+    text-align: center;
+}
+
+section form button#admin-login-btn {
+    background: rgb(194, 110, 213);
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+    font-size: x-large;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+section form button#admin-login-btn:hover {
+    color: black;
+    transition: 0.2s;
 }
 
 footer {
