@@ -12,7 +12,7 @@
 <body>
     <section>
         <nav>
-            <a href="./index.html">ראשי</a>
+            <a href="/">ראשי</a>
         </nav>
     </section>
 
@@ -20,17 +20,22 @@
     <main>
 
         <section class="design_form">
+            <!-- Success message when form is submitted -->
+            <div id="success-message" style="display: none; background: #d4edda; color: #155724; padding: 10px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
+                ✅ התלונה נשלחה בהצלחה!
+            </div>
+            
             <form action="/submit-complaint" method="POST">
                 <label for="complaint-type">בחר סוג תלונה</label>
-                <select class="design_select" name="complaint_type" id="complaint-type" required>
+                <select class="design_select" name="category" id="complaint-type" required>
                     <option value="" disabled selected hidden>בחר סוג</option>
-                    <option class="design_option" value="food">אוכל</option>
-                    <option class="design_option" value="equipment">ציוד</option>
-                    <option class="design_option" value="commands">פקודות</option>
-                    <option class="design_option" value="other">אחר</option>
+                    <option class="design_option" value="אוכל">אוכל</option>
+                    <option class="design_option" value="ציוד">ציוד</option>
+                    <option class="design_option" value="פקודות">פקודות</option>
+                    <option class="design_option" value="אחר">אחר</option>
                 </select>
                 <label for="complaint-content">תוכן התלונה</label>
-                <textarea id="complaint-content" name="complaint_content" rows="5" cols="40"
+                <textarea id="complaint-content" name="message" rows="5" cols="40"
                     placeholder="כתוב כאן את תוכן התלונה" required></textarea>
                 <input id="submit-complaint" type="submit" value="שלח">
             </form>
@@ -42,6 +47,15 @@
         <span>כל הזכויות שמורות &copy; 2025 | פיתוח: Inon Guetta</span>
     </footer>
 
+    <script>
+        // Show success message if redirected after form submission
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('sent') === '1') {
+            document.getElementById('success-message').style.display = 'block';
+            // Clear the URL parameter after showing the message
+            window.history.replaceState({}, document.title, '/complaints.html');
+        }
+    </script>
 
 </body>
 

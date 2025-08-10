@@ -4,7 +4,7 @@ const complaintSchema = new mongoose.Schema(
   {
     category: {
       type: String,
-      enum: ['food', 'equipment', 'orders', 'other'],
+      enum: ['אוכל', 'ציוד', 'פקודות', 'אחר'],
       required: true,
       trim: true,
     },
