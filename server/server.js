@@ -1,27 +1,30 @@
-// import express from 'express';
-// import connectToRoutes from './routes/complaints.js';
-
-// const port = 3000;
-// const server = express();
-// server.use(express.json());
-// server.use('/',connectToRoutes);
-
-
-
-// server.listen(port, ()=>{
-//     console.log(`you listen about port ${port}`);  
-// })
-
 import express from 'express';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { connectDB } from './db/connect.js';
 import connectToRoutes from './routes/complaints.js';
 
 dotenv.config();
 
 const server = express();
+
+// Request logger to see what's coming in
+server.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} ${req.method} ${req.url}`);
+  next();
+});
+
+server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
+
+// Serve static files from client directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+server.use(express.static(path.join(__dirname, '..', 'client')));
+
 server.use('/', connectToRoutes);
+
 
 const port = process.env.PORT ?? 3000;
 
