@@ -9,7 +9,7 @@ const complaintSchema = new mongoose.Schema(
       trim: true,
     },
     message: { type: String, required: true, trim: true, minlength: 2 },
-    createdAt: { type: Date, default: Date.now },
+    createdAt: { type: Date, default: Date.now},
   },
   { versionKey: false }
 );

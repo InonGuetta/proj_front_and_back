@@ -9,16 +9,9 @@ dotenv.config();
 
 const server = express();
 
-// Request logger to see what's coming in
-server.use((req, res, next) => {
-  console.log(`${new Date().toISOString()} ${req.method} ${req.url}`);
-  next();
-});
-
 server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
-// Serve static files from client directory
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 server.use(express.static(path.join(__dirname, '..', 'client')));
